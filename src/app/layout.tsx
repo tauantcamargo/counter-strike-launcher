@@ -1,3 +1,4 @@
+import NavBar from '@/components/navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,7 +16,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="bg-gray-900 h-screen flex items-center justify-center">
+          <div className="relative isolate">
+            <div className="mx-screen max-w-[95vw] sm:px-2 lg:px-2">
+              <div className="mx-screen flex bg-white/5 ring-white/10 lg:flex-row lg:items-start lg:py-2 xl:px-2">
+                <div className="w-screen h-[90vh] flex flex-col items-start">
+                  <NavBar />
+                  {children}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
